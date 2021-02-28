@@ -1,24 +1,21 @@
-# README
+<h1>This project its a test for an intership in JambuTec</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2>These are the tasks</h2>
 
-Things you may want to cover:
+<ol>
+  <li>
+    <ul>
+      <li>The user should be able to make a research by types (people/planets/starships)<li>
+      <li>The results should be printed in an interface in a list format</li>
+    </ul>
+  </li>
+  
+  <li>
+    <ul>
+      <li>The user should be able to build a favorites list, being able to check one (or more) items (people/planets/starships) as favorite</li>
+      <li>Store the data using any persistence strategy</li>
+    </ul>
+  </li> 
+</ol>
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
