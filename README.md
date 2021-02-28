@@ -12,7 +12,7 @@
   
   <li>
     <ul>
-      <li>The user should be able to build a favorites list, being able to check one (or more) items (people/planets/starships) as favorite</li>
+      <li>The user should be able to build a favorites list, being able to check one (or more) items (people/planets/starships) as favorites</li>
       <li>Store the data using any persistence strategy</li>
     </ul>
   </li> 
