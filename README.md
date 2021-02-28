@@ -16,6 +16,12 @@
       <li>Store the data using any persistence strategy</li>
     </ul>
   </li> 
+  
+  <li>
+    <ul>
+      <li>The user must be able to consult their favorite list, for example, a screen that shows all the stored starships</li>
+    </ul>
+  </li>
 </ol>
 
 
