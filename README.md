@@ -5,7 +5,7 @@
 <ol>
   <li>
     <ul>
-      <li>The user should be able to make a research by types (people/planets/starships)<li>
+      <li>The user should be able to make a research by types (people/planets/starships)</li>
       <li>The results should be printed in an interface in a list format</li>
     </ul>
   </li>
