@@ -24,4 +24,10 @@
   </li>
 </ol>
 
+<h2>Must be used: </h2>
+<ul>
+  <li>Bootstrap 4</li>
+  <li>Linux platform</li>
+  <li>Some CSS framework</li>
+</ul>
 
