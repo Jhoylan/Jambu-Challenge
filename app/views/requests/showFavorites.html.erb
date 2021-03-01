@@ -2,7 +2,7 @@
 
 <% @people.each do |name| %>
   <div>
-    <a href=<%= @peopleId[@people.find_index(name)] %>><%= name %></a>
+    <a href=<%= @peopleRoute[@people.find_index(name)] %>><%= name %></a>
   </div>
 <% end %>
 
@@ -10,7 +10,7 @@
 
 <% @planets.each do |name| %>
   <div>
-    <a href=<%= @planetsId[@planets.find_index(name)] %>><%= name %></a>
+    <a href=<%= @planetsRoute[@planets.find_index(name)] %>><%= name %></a>
   </div>
 <% end %>
 
@@ -18,7 +18,7 @@
 
 <% @starships.each do |name| %>
   <div>
-    <a href=<%= @starshipsId[@starships.find_index(name)] %>><%= name %></a>
+    <a href=<%= @starshipsRoute[@starships.find_index(name)] %>><%= name %></a>
   </div>
 <% end %>
 

@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   post "/showFavorites" => "requests#showFavorites"
   
   get "/searchFavorites" => "requests#searchFavorites"
-  get "/people/:id" => "requests#show"
-  get "/planets/:id" => "requests#show"
-  get "/starships/:id" => "requests#show"
+  get "/:id" => "requests#show"
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

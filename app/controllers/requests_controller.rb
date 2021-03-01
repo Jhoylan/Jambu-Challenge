@@ -58,7 +58,16 @@ class RequestsController < ApplicationController
         username = params[:userName][:field]
         favorite = Favorite.new(name: username, favorite: @result, dataType: data_type)
 
-        if favorite.save
+        isNewFavorite = true
+
+        Favorite.all.each do favorite
+          if favorite.name == username && favorite == @result
+            isNewFavorite = false
+          end
+        end
+
+        if isNewFavorite && !username == 'nil'
+          favorite.save
           @savingStatus = 'Information successfully saved on our database'
         else
           @savingStatus = "We're unable to save this information"
@@ -67,9 +76,7 @@ class RequestsController < ApplicationController
 
       
     else
-      @result = {
-        result: "Sorry, we're unable to find an answer for your search" 
-      }
+      render :pageNotFound
     end    
   end 
 
@@ -80,28 +87,43 @@ class RequestsController < ApplicationController
     @starships = []
     @people = []
     @planets = []
-    @starshipsId = []
-    @peopleId = []
-    @planetsId = []
+    @starshipsRoute = []
+    @peopleRoute = []
+    @planetsRoute = []
     
 
     Favorite.all.each do |favorite|
       if params[:userName][:field] == favorite.name
         if favorite.dataType == "people"
           @people.push(favorite.favorite[:name])
-          @peopleId.push("http://localhost:3000/people/" + favorite.id.to_s)
+          @peopleRoute.push("http://localhost:3000/" + favorite.id.to_s)
         end
 
         if favorite.dataType == "planets"
           @planets.push(favorite.favorite[:name])
-          @planetsId.push("http://localhost:3000/people/" + favorite.id.to_s)
+          @planetsRoute.push("http://localhost:3000/" + favorite.id.to_s)
         end
 
         if favorite.dataType == "starships"
           @starships.push(favorite.favorite[:name])
-          @starshipsId.push("http://localhost:3000/people/" + favorite.id.to_s)
+          @starshipsRoute.push("http://localhost:3000/" + favorite.id.to_s)
         end
       end
+    end
+
+    if @starships.length() == 0
+      @starships.push("You don't have any favorite starships, click to go back to search")
+      @starshipsRoute.push("http://localhost:3000/searchFavorites")
+    end
+
+    if @people.length() == 0
+      @people.push("You don't have any favorite people, click to go back to search")
+      @starshipsRoute.push("http://localhost:3000/searchFavorites")
+    end
+
+    if @planets.length() == 0
+      @planets.push("You don't have any favorite planets, click to go back to search")
+      @starshipsRoute.push("http://localhost:3000/searchFavorites")
     end
   end
 
