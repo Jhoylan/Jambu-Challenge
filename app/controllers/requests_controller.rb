@@ -54,23 +54,32 @@ class RequestsController < ApplicationController
         } 
       end 
 
+      
       if params[:save] == '1'
         username = params[:userName][:field]
+        @name = "username"
+
         favorite = Favorite.new(name: username, favorite: @result, dataType: data_type)
 
         isNewFavorite = true
 
-        Favorite.all.each do favorite
-          if favorite.name == username && favorite == @result
+        Favorite.all.each do |favorite|
+          if favorite.name == username && favorite.favorite == @result
             isNewFavorite = false
           end
         end
 
-        if isNewFavorite && !username == 'nil'
+        if username.length > 0 && isNewFavorite
           favorite.save
           @savingStatus = 'Information successfully saved on our database'
         else
-          @savingStatus = "We're unable to save this information"
+          if username.length == 0
+            @savingStatus = "Please, insert an username"
+          end
+
+          if !isNewFavorite
+            @savingStatus = "You're already save this in your favorite list"
+          end
         end
       end
 
