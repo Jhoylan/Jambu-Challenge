@@ -3,13 +3,13 @@ class RequestsController < ApplicationController
   end
 
   def research
-    type = params[:type][:field]
+    data_type = params[:type][:field]
     number = params[:number][:field]
 
-    response = HTTParty.get('https://swapi.dev/api/' + type + '/' + number + '/')
+    response = HTTParty.get('https://swapi.dev/api/' + data_type + '/' + number + '/')
 
     if response.code < 299
-      if type == 'people'
+      if data_type == 'people'
         @result = {
           name: response["name"], 
           height: response["height"], 
@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
         } 
       end 
 
-      if type == 'planets'
+      if data_type == 'planets'
         @result = {
           name: response["name"], 
           rotation_period: response["rotation_period"], 
@@ -36,7 +36,7 @@ class RequestsController < ApplicationController
         } 
       end 
 
-      if type == 'starships'
+      if data_type == 'starships'
         @result = {
           name: response["name"], 
           model: response["model"], 
@@ -54,10 +54,59 @@ class RequestsController < ApplicationController
         } 
       end 
 
+      if params[:save] == '1'
+        username = params[:userName][:field]
+        favorite = Favorite.new(name: username, favorite: @result, dataType: data_type)
+
+        if favorite.save
+          @savingStatus = 'Information successfully saved on our database'
+        else
+          @savingStatus = "We're unable to save this information"
+        end
+      end
+
+      
     else
       @result = {
         result: "Sorry, we're unable to find an answer for your search" 
       }
     end    
   end 
+
+  def searchFavorites
+  end
+
+  def showFavorites
+    @starships = []
+    @people = []
+    @planets = []
+    @starshipsId = []
+    @peopleId = []
+    @planetsId = []
+    
+
+    Favorite.all.each do |favorite|
+      if params[:userName][:field] == favorite.name
+        if favorite.dataType == "people"
+          @people.push(favorite.favorite[:name])
+          @peopleId.push("http://localhost:3000/people/" + favorite.id.to_s)
+        end
+
+        if favorite.dataType == "planets"
+          @planets.push(favorite.favorite[:name])
+          @planetsId.push("http://localhost:3000/people/" + favorite.id.to_s)
+        end
+
+        if favorite.dataType == "starships"
+          @starships.push(favorite.favorite[:name])
+          @starshipsId.push("http://localhost:3000/people/" + favorite.id.to_s)
+        end
+      end
+    end
+  end
+
+  def show
+    @result = Favorite.find(params[:id]).favorite
+    render :research
+  end
 end

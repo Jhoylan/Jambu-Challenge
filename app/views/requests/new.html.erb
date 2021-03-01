@@ -1,10 +1,18 @@
 <h1>New research</h1>
 
+<h2><a href="http://localhost:3000/searchFavorites">Show Favorites</a></h2>
+
 <body>
-<%= form_tag("/research") do %>
+<%= form_with url:"/research" do |form|%>
+  <h2>Username</h2>
+  <%= text_field(:userName, :field) %>
   <h2>Type</h2>
   <%= text_field(:type, :field) %>
    <h2>Number</h2>
   <%= text_field(:number, :field) %><br>
+  <%= form.check_box :save%>
+  <%= form.label :save, "save" %><br>
   <%= submit_tag("submit") %>
 <% end %>
+
+

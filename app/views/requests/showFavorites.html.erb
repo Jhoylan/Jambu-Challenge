@@ -1,0 +1,25 @@
+<h1>The favorite people are</h1>
+
+<% @people.each do |name| %>
+  <div>
+    <a href=<%= @peopleId[@people.find_index(name)] %>><%= name %></a>
+  </div>
+<% end %>
+
+<h1>The favorite planets are</h1>
+
+<% @planets.each do |name| %>
+  <div>
+    <a href=<%= @planetsId[@planets.find_index(name)] %>><%= name %></a>
+  </div>
+<% end %>
+
+<h1>The favorite starships are</h1>
+
+<% @starships.each do |name| %>
+  <div>
+    <a href=<%= @starshipsId[@starships.find_index(name)] %>><%= name %></a>
+  </div>
+<% end %>
+
+
