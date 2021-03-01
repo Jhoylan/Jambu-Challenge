@@ -109,22 +109,7 @@ class RequestsController < ApplicationController
           @starshipsRoute.push("http://localhost:3000/" + favorite.id.to_s)
         end
       end
-    end
-
-    if @starships.length() == 0
-      @starships.push("You don't have any favorite starships, click to go back to search")
-      @starshipsRoute.push("http://localhost:3000/searchFavorites")
-    end
-
-    if @people.length() == 0
-      @people.push("You don't have any favorite people, click to go back to search")
-      @starshipsRoute.push("http://localhost:3000/searchFavorites")
-    end
-
-    if @planets.length() == 0
-      @planets.push("You don't have any favorite planets, click to go back to search")
-      @starshipsRoute.push("http://localhost:3000/searchFavorites")
-    end
+    end   
   end
 
   def show

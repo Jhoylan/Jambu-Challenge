@@ -1,32 +1,49 @@
-<h1>My favorites</h1>
+<body>
+  <header>
+    <h1>My favorites</h1>
 
-<nav>    
-    <a href="http://localhost:3000/">Home</a>
-    <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
-</nav>
+    <nav>    
+        <a href="http://localhost:3000/">Home</a>
+        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    </nav>
+  </header>
+  
+  <main>
+    <h1>My favorite people are</h1>
 
-<h1>My favorite people are</h1>
+    <% if @people.length() > 0%>
+      <% @people.each do |name| %>
+        <div>
+          <a href=<%= @peopleRoute[@people.find_index(name)] %>><%= name %></a>
+        </div>
+      <% end %>
+    <% else %>
+      <h2>You don't have any favorite people</h2>
+    <% end %>
 
-<% @people.each do |name| %>
-  <div>
-    <a href=<%= @peopleRoute[@people.find_index(name)] %>><%= name %></a>
-  </div>
-<% end %>
+    <h1>My favorite planets are</h1>
 
-<h1>My favorite planets are</h1>
+    <% if @planets.length() > 0%>
+      <% @planets.each do |name| %>
+        <div>
+          <a href=<%= @planetsRoute[@planets.find_index(name)] %>><%= name %></a>
+        </div>
+      <% end %>
+    <% else %>
+      <h2>You don't have any favorite planets</h2>
+    <% end %>
 
-<% @planets.each do |name| %>
-  <div>
-    <a href=<%= @planetsRoute[@planets.find_index(name)] %>><%= name %></a>
-  </div>
-<% end %>
-
-<h1>My favorite starships are</h1>
-
-<% @starships.each do |name| %>
-  <div>
-    <a href=<%= @starshipsRoute[@starships.find_index(name)] %>><%= name %></a>
-  </div>
-<% end %>
-
+    <h1>My favorite starships are</h1>
+    <% if @starships.length() > 0%>
+      <% @starships.each do |name| %>
+        <div>
+          <a href=<%= @starshipsRoute[@starships.find_index(name)] %>><%= name %></a>
+        </div>
+      <% end %>
+    <% else %>
+      <h2>You don't have any favorite starships</h2>
+    <% end %>
+  </main>
+  
+</body>
 

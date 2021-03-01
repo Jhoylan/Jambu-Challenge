@@ -1,12 +1,18 @@
-<h1>Search my favorites</h1>
+<body>
+  <header>
+    <h1>Search my favorites</h1>
 
-<nav>    
-    <a href="http://localhost:3000/">Home</a>
-    <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
-</nav>
-
-<%= form_with url:"/showFavorites" do |form|%>
-  <h2>Username</h2>
-  <%= text_field(:userName, :field) %>
-  <%= submit_tag("search") %>
-<% end %>
+    <nav>    
+        <a href="http://localhost:3000/">Home</a>
+        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    </nav>
+  </header>
+  
+  <main>
+    <%= form_with url:"/showFavorites" do |form|%>
+      <h2>Username</h2>
+      <%= text_field(:userName, :field) %>
+      <%= submit_tag("search") %>
+    <% end %>
+  </main> 
+</body>

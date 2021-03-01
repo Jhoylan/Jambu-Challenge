@@ -1,14 +1,23 @@
-<h1>That's you search result</h1>
+<body>
+  <header>
+    <h1>That's you search result</h1>
 
-<nav>    
-    <a href="http://localhost:3000/">Home</a>
-    <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
-</nav>
+    <nav>    
+        <a href="http://localhost:3000/">Home</a>
+        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    </nav>
+  </header>
+  <main>
+    <% @result.each do |attr_name, attr_value| %>
+      <div>
+        <%= attr_name %>: <%= attr_value %>
+      </div>
+    <% end %>
+  </main>
 
-<% @result.each do |attr_name, attr_value| %>
-  <div>
-    <%= attr_name %>: <%= attr_value %>
-  </div>
-<% end %>
+  <footer><%= @savingStatus %></footer>
+</body>
 
-<%= @savingStatus %>
+
+
+

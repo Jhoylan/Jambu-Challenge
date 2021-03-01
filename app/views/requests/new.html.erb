@@ -1,23 +1,29 @@
-<h1>New research</h1>
-
-<nav>    
-    <a href="http://localhost:3000/">Home</a>
-    <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
-</nav>
-
-
-
 <body>
-<%= form_with url:"/research" do |form|%>
-  <h2>Username</h2>
-  <%= text_field(:userName, :field) %>
-  <h2>Type</h2>
-  <%= text_field(:type, :field) %>
-   <h2>Number</h2>
-  <%= text_field(:number, :field) %><br>
-  <%= form.check_box :save%>
-  <%= form.label :save, "save" %><br>
-  <%= submit_tag("submit") %>
-<% end %>
+  <header>
+    <h1>New research</h1>
+
+    <nav>    
+        <a href="http://localhost:3000/">Home</a>
+        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    </nav>
+  </header>
+  
+  <main>
+    <body>
+    <%= form_with url:"/research" do |form|%>
+      <h2>Username</h2>
+      <%= text_field(:userName, :field) %>
+      <h2>Type</h2>
+      <%= text_field(:type, :field) %>
+      <h2>Number</h2>
+      <%= text_field(:number, :field) %><br>
+      <%= form.check_box :save%>
+      <%= form.label :save, "save" %><br>
+      <%= submit_tag("submit") %>
+    <% end %>
+  </main>  
+</body>
+
+
 
 
