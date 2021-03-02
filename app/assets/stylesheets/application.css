@@ -55,15 +55,10 @@ a:hover{
   width: 50%
 }
 
-
-
-
 /*=== home ===*/
 #searchForm{
   width: 500px;
 }
-
-
 
 .form_fields{
   display: table;
@@ -108,7 +103,9 @@ a:hover{
 }
 
 #usernameField{
-  border-radius: 0.25rem;
+  -moz-border-radius: 6px 0 0 0;
+  -webkit-border-radius: 6px 0 0 0;
+  border-radius: 6px 0 0 0;
 }
 
 /*=== research ===*/

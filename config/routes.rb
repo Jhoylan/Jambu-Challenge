@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post "/research" => "requests#research"
   get "/research" => "requests#new"
   post "/showFavorites" => "requests#showFavorites"
+  get "/showFavorites" => "requests#searchFavorites"
   
   get "/searchFavorites" => "requests#searchFavorites"
   get "/:id" => "requests#show"
