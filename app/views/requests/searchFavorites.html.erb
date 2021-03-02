@@ -1,18 +1,23 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+</head>
 <body>
   <header>
-    <h1>Search my favorites</h1>
-
-    <nav>    
-        <a href="http://localhost:3000/">Home</a>
-        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    <nav class="navigation">  
+      <div class="navigationButtons"> 
+        <div class="home"><a href="http://localhost:3000/"><h1>HOME</h1></a></div>
+        <div class="favorites"><a href="http://localhost:3000/searchFavorites"><h1>FAVORITES</h1></a></div>
+      </div>  
+         
     </nav>
   </header>
   
   <main>
     <%= form_with url:"/showFavorites" do |form|%>
-      <h2>Username</h2>
-      <%= text_field(:userName, :field) %>
-      <%= submit_tag("search") %>
+      <h2>USERNAME</h2>
+      <%= text_field(:userName, :field) %><br>
+      <%= image_submit_tag("submit_button.jpg", class:"submitButton") %>
     <% end %>
   </main> 
 </body>

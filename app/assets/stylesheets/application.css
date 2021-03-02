@@ -1,3 +1,51 @@
+/*=== global ===*/
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+body{
+  background-image: url(star_wars_background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 700px;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  
+}
+
+a:hover{
+  color: #fff;
+  
+}
+
+.navigation{
+  display: table;
+}
+
+.navigationButtons{
+  display: table-row;
+}
+
+.title{
+  color: white;
+}
+
+.home{
+  display: table-cell;
+  width: 120px;
+}
+
+.favorites{
+  display: table-cell;
+}
+
+/*=== Page not found ===*/
 #wtf{
   display: block;
   margin-left: auto;
@@ -17,4 +65,67 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+
+/*=== home ===*/
+#searchForm{
+  width: 500px;
+}
+
+
+
+.form_fields{
+  display: table;
+}
+
+.row{
+  display: table-row;
+}
+
+.child{
+  display: table-cell;
+}
+
+#username{
+  width: 160px;
+  color: white;
+}
+
+#type{
+  width: 85px;  
+  color: white;
+}
+
+
+#number{
+  width:125px;
+  color: white;
+}
+
+.submitButton{
+  width: 200px;
+  height: 50px;
+  border-radius: 0.25rem;
+}
+
+#numberField{
+  color: black;
+}
+
+#checkBox{
+  color: white;
+}
+
+#usernameField{
+  border-radius: 0.25rem;
+}
+
+/*=== research ===*/
+main{
+  color: white;
+}
+
+footer{
+  color: white;
 }

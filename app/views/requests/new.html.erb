@@ -1,26 +1,54 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+</head>
+
 <body>
   <header>
-    <h1>New research</h1>
-
-    <nav>    
-        <a href="http://localhost:3000/">Home</a>
-        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    <nav class="navigation">  
+      <div class="navigationButtons"> 
+        <div class="home"><a href="http://localhost:3000/"><h1>HOME</h1></a></div>
+        <div class="favorites"><a href="http://localhost:3000/searchFavorites"><h1>FAVORITES</h1></a></div>
+      </div>  
+         
     </nav>
   </header>
   
   <main>
-    <body>
-    <%= form_with url:"/research" do |form|%>
-      <h2>Username</h2>
-      <%= text_field(:userName, :field) %>
-      <h2>Type</h2>
-      <%= text_field(:type, :field) %>
-      <h2>Number</h2>
-      <%= text_field(:number, :field) %><br>
-      <%= form.check_box :save%>
-      <%= form.label :save, "save" %><br>
-      <%= submit_tag("submit") %>
-    <% end %>
+    <div id="searchForm">
+      <%= form_with url:"/research" do |form|%>
+        <div class="form_field">
+          <div class="row">
+            <div class="child"><div class="cell" id="username"><h2>USERNAME:</h2></div> </div>
+            <div class="child"><div class="cell" id="usernameField"><%= text_field(:userName, :field) %></div></div>                  
+          </div class="row">   
+        </div>
+
+        <div class="form_field">
+          <div class="row">
+            <div class="child"><div class="cell" id="type"><h2>TYPE:</h2></div></div>
+            <div class="child"><div class="cell"><%= text_field(:type, :field) %></div></div>
+          </div>     
+        </div>
+
+        <div class="form_field">
+          <div class="row">
+            <div class="child"><div class="cell" id="number"><h2>NUMBER:</h2></div></div>
+            <div class="child"><div class="cell" id="numberField"><%= text_field(:number, :field) %><br></div></div>
+          </div>                  
+        </div>
+
+        <div id="checkBox">
+          <%= form.check_box :save%>
+          <%= form.label :save, "SAVE FAVORITE" %><br>
+        </div>
+        
+        <div id="submitButton">
+          <%= image_submit_tag("submit_button.jpg", class:"submitButton") %>
+        </div>
+      <% end %>
+    <div>
+    
   </main>  
 </body>
 

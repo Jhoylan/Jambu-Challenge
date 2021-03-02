@@ -57,9 +57,8 @@ class RequestsController < ApplicationController
       
       if params[:save] == '1'
         username = params[:userName][:field]
-        @name = "username"
-
-        favorite = Favorite.new(name: username, favorite: @result, dataType: data_type)
+       
+        favorite = Favorite.new(name: username.upcase, favorite: @result, dataType: data_type)
 
         isNewFavorite = true
 
@@ -71,14 +70,14 @@ class RequestsController < ApplicationController
 
         if username.length > 0 && isNewFavorite
           favorite.save
-          @savingStatus = 'Information successfully saved on our database'
+          @savingStatus = 'INFORMATION SUCCESFULLY SAVED ON OUR DATABASE'
         else
           if username.length == 0
-            @savingStatus = "Please, insert an username"
+            @savingStatus = "PLEASE, ENTER AN USERNAME"
           end
 
           if !isNewFavorite
-            @savingStatus = "You're already save this in your favorite list"
+            @savingStatus = "YOU'RE ALREADY SAVE THIS IN YOUR FAVORITE LIST"
           end
         end
       end
@@ -99,8 +98,8 @@ class RequestsController < ApplicationController
     @starshipsRoute = []
     @peopleRoute = []
     @planetsRoute = []
+    username = params[:userName][:field]
     
-
     Favorite.all.each do |favorite|
       if params[:userName][:field] == favorite.name
         if favorite.dataType == "people"
@@ -119,6 +118,8 @@ class RequestsController < ApplicationController
         end
       end
     end   
+
+    @name = username.upcase!
   end
 
   def show

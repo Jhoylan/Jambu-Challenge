@@ -1,15 +1,21 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+</head>
 <body>
   <header>
-    <h1>My favorites</h1>
-
-    <nav>    
-        <a href="http://localhost:3000/">Home</a>
-        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>   
+    <nav class="navigation">  
+      <div class="navigationButtons"> 
+        <div class="home"><a href="http://localhost:3000/"><h1>HOME</h1></a></div>
+        <div class="favorites"><a href="http://localhost:3000/searchFavorites"><h1>FAVORITES</h1></a></div>
+      </div>  
+         
     </nav>
   </header>
   
   <main>
-    <h1>My favorite people are</h1>
+    <h1><%= @name %>'S FAVORITE LIST</h1>
+    <h1>PEOPLE</h1>
 
     <% if @people.length() > 0%>
       <% @people.each do |name| %>
@@ -18,10 +24,10 @@
         </div>
       <% end %>
     <% else %>
-      <h2>You don't have any favorite people</h2>
+      <h2>NONE</h2>
     <% end %>
 
-    <h1>My favorite planets are</h1>
+    <h1>PLANETS</h1>
 
     <% if @planets.length() > 0%>
       <% @planets.each do |name| %>
@@ -30,10 +36,10 @@
         </div>
       <% end %>
     <% else %>
-      <h2>You don't have any favorite planets</h2>
+      <h2>NONE</h2>
     <% end %>
 
-    <h1>My favorite starships are</h1>
+    <h1>STARSHIPS</h1>
     <% if @starships.length() > 0%>
       <% @starships.each do |name| %>
         <div>
@@ -41,7 +47,7 @@
         </div>
       <% end %>
     <% else %>
-      <h2>You don't have any favorite starships</h2>
+      <h2>NONE</h2>
     <% end %>
   </main>
   

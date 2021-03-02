@@ -1,15 +1,22 @@
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+</head>
 <body>
   <header>
-    <h1>That's you search result</h1>
-    <nav>    
-        <a href="http://localhost:3000/">Home</a>
-        <a href="http://localhost:3000/searchFavorites">Show my favorites</a>  
+    <nav class="navigation">  
+      <div class="navigationButtons"> 
+        <div class="home"><a href="http://localhost:3000/"><h1>HOME</h1></a></div>
+        <div class="favorites"><a href="http://localhost:3000/searchFavorites"><h1>FAVORITES</h1></a></div>
+      </div>  
+         
     </nav>
   </header>
+
   <main>
     <% @result.each do |attr_name, attr_value| %>
       <div>
-        <%= attr_name %>: <%= attr_value %>
+      <h2><%= attr_name %>: <%= attr_value %></h2>
       </div>
     <% end %>
   </main>  
