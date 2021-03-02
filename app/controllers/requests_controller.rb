@@ -101,7 +101,7 @@ class RequestsController < ApplicationController
     username = params[:userName][:field]
 
     if username.length() == 0
-      render :pageNotFound
+      render :searchFavorites
     end 
     
     Favorite.all.each do |favorite|
@@ -127,7 +127,7 @@ class RequestsController < ApplicationController
       @name = username
     else
       @name = username.upcase!
-    end    
+    end   
   end
 
   def show
