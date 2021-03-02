@@ -123,7 +123,11 @@ class RequestsController < ApplicationController
       end
     end   
 
-    @name = username.upcase!
+    if username == username.upcase
+      @name = username
+    else
+      @name = username.upcase!
+    end    
   end
 
   def show
