@@ -27,7 +27,7 @@
         <div class="form_field">
           <div class="row">
             <div class="child"><div class="cell" id="type"><h2>TYPE:</h2></div></div>
-            <div class="child"><div class="cell"><%= text_field(:type, :field) %></div></div>
+            <div class="child"><div class="cell" id="typeField"><%= text_field(:type, :field) %></div></div>
           </div>     
         </div>
 
@@ -40,7 +40,7 @@
 
         <div id="checkBox">
           <%= form.check_box :save%>
-          <%= form.label :save, "SAVE FAVORITE" %><br>
+          <%= form.label :save, "SAVE FAVORITE" %><br><br>
         </div>
         
         <div id="submitButton">

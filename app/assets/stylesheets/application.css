@@ -97,18 +97,20 @@ a:hover{
   border-radius: 0.25rem;
 }
 
-#numberField{
-  color: black;
-}
-
 #checkBox{
   color: white;
 }
 
-#usernameField{
-  -moz-border-radius: 6px 0 0 0;
-  -webkit-border-radius: 6px 0 0 0;
-  border-radius: 6px 0 0 0;
+#usernameField input{
+  border-radius: 0.50rem;
+}
+
+#numberField input{
+  border-radius: 0.50rem;
+}
+
+#typeField input{
+  border-radius: 0.50rem;
 }
 
 /*=== research ===*/
