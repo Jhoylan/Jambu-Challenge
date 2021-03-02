@@ -46,26 +46,12 @@ a:hover{
 }
 
 /*=== Page not found ===*/
-#wtf{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+#page_not_found_gif{
+  margin: 0 auto;
+  width: 50%
 }
 
-#pageNotFoundMessage{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
-.pageNotFoundNav{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
 
 /*=== home ===*/

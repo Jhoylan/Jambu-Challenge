@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "requests#new"
 
   post "/research" => "requests#research"
+  get "/research" => "requests#new"
   post "/showFavorites" => "requests#showFavorites"
   
   get "/searchFavorites" => "requests#searchFavorites"
