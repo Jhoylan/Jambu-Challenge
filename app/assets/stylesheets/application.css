@@ -78,6 +78,7 @@ a:hover{
 #username{
   width: 160px;
   color: white;
+  margin: auto;
 }
 
 #type{
@@ -97,20 +98,36 @@ a:hover{
   border-radius: 0.25rem;
 }
 
+
 #checkBox{
   color: white;
 }
 
 #usernameField input{
   border-radius: 0.50rem;
+  margin-top: 0;
+  position: relative;
+  top: 5px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #numberField input{
   border-radius: 0.50rem;
+  margin-top: 0;
+  position: relative;
+  top: 5px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #typeField input{
   border-radius: 0.50rem;
+  margin-top: 0;
+  position: relative;
+  top: 5px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /*=== research ===*/
