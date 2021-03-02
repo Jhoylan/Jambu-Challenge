@@ -99,6 +99,10 @@ class RequestsController < ApplicationController
     @peopleRoute = []
     @planetsRoute = []
     username = params[:userName][:field]
+
+    if username.length() == 0
+      render :pageNotFound
+    end 
     
     Favorite.all.each do |favorite|
       if params[:userName][:field] == favorite.name
