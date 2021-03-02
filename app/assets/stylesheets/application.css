@@ -42,10 +42,12 @@ a:hover{
 .home{
   display: table-cell;
   width: 120px;
+  font-size: larger;
 }
 
 .favorites{
   display: table-cell;
+  font-size: larger;
 }
 
 /*=== Page not found ===*/
@@ -76,19 +78,19 @@ a:hover{
 }
 
 #username{
-  width: 160px;
+  width: 200px;
   color: white;
   margin: auto;
 }
 
 #type{
-  width: 85px;  
+  width: 100px;  
   color: white;
 }
 
 
 #number{
-  width:125px;
+  width:155px;
   color: white;
 }
 
