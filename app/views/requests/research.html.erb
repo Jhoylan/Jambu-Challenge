@@ -16,8 +16,12 @@
   <main>
     <% @result.each do |attr_name, attr_value| %>
       <div>
-      <h2><%= attr_name %>: <%= attr_value %></h2>
-      </div>
+        <% if !attr_value.nil? %>
+          <h2><%= attr_name.upcase %>: <%= attr_value.upcase  %></h2>                 
+        <% else %>
+          <h2><%= attr_name.upcase %>:  [N/A] </h2>
+        <% end %>
+       </div>
     <% end %>
   </main>  
   

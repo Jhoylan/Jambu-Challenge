@@ -20,7 +20,7 @@
     <% if @people.length() > 0%>
       <% @people.each do |name| %>
         <div>
-          <a href=<%= @peopleRoute[@people.find_index(name)] %>><%= name %></a>
+          <a href=<%= @peopleRoute[@people.find_index(name)] %>><%= name.upcase %></a>
         </div>
       <% end %>
     <% else %>
@@ -32,7 +32,7 @@
     <% if @planets.length() > 0%>
       <% @planets.each do |name| %>
         <div>
-          <a href=<%= @planetsRoute[@planets.find_index(name)] %>><%= name %></a>
+          <a href=<%= @planetsRoute[@planets.find_index(name)] %>><%= name.upcase %></a>
         </div>
       <% end %>
     <% else %>
@@ -43,7 +43,7 @@
     <% if @starships.length() > 0%>
       <% @starships.each do |name| %>
         <div>
-          <a href=<%= @starshipsRoute[@starships.find_index(name)] %>><%= name %></a>
+          <a href=<%= @starshipsRoute[@starships.find_index(name)] %>><%= name.upcase %></a>
         </div>
       <% end %>
     <% else %>
