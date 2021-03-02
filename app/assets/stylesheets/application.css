@@ -8,9 +8,9 @@
 body{
   width: 100%;
   height: 100%;
-  background-image: url(star_wars_background.jpg);
+  background-image: url(starwars_background.webp);
   background-repeat: no-repeat;
-  background-size: 100% 850px;
+  background-size: 100% 890px;
   overflow-x: hidden;
 }
 
@@ -98,6 +98,7 @@ a:hover{
   width: 168px;
   height: 30px;
   border-radius: 0.25rem;
+  
 }
 
 

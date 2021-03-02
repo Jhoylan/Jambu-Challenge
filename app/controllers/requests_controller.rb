@@ -58,7 +58,7 @@ class RequestsController < ApplicationController
       if params[:save] == '1'
         username = params[:userName][:field]
        
-        favorite = Favorite.new(name: username.upcase, favorite: @result, dataType: data_type)
+        favorite = Favorite.new(name: username, favorite: @result, dataType: data_type)
 
         isNewFavorite = true
 
