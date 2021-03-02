@@ -1,4 +1,4 @@
-<h1>This project its a test for an intership in JambuTec</h1>
+<h1>This project its a test for an internship in JambuTec</h1>
 
 <h2>These are the tasks</h2>
 
