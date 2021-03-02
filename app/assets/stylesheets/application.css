@@ -10,7 +10,7 @@ body{
   height: 100%;
   background-image: url(star_wars_background.jpg);
   background-repeat: no-repeat;
-  background-size: 1375px 850px;
+  background-size: 100% 850px;
   overflow-x: hidden;
 }
 
@@ -92,7 +92,7 @@ a:hover{
 }
 
 .submitButton{
-  width: 145px;
+  width: 168px;
   height: 30px;
   border-radius: 0.25rem;
 }
