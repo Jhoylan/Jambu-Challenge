@@ -15,9 +15,11 @@
   
   <main>
     <%= form_with url:"/showFavorites" do |form|%>
-      <h1>USERNAME</h1>
-      <div id="usernameField"><%= text_field(:userName, :field) %></div><br>
-      <%= image_submit_tag("submit_button.jpg", class:"submitButton") %>
+      <div class="form_field">
+        <div class="child"><div id="favorite_username"><h1>USERNAME:</h1></div></div>
+        <div class="child"><div id="usernameField"><%= text_field(:userName, :field) %></div></div><br>
+        <%= image_submit_tag("submit_button.jpg", class:"submitButton") %>
+      <div>
     <% end %>
   </main> 
 </body>

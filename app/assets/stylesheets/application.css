@@ -140,3 +140,8 @@ main{
 footer{
   color: white;
 }
+
+/*=== search favorites ===*/
+#favorite_username{
+  width: 200px;
+}
